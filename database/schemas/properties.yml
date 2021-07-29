@@ -1,0 +1,220 @@
+properties:
+  columns:
+    id: bigIncrements
+    user_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'ユーザーキー'
+    office_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '事業所キー'
+    area_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: 'エリアキー'
+    client_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '顧客キー'
+    management_company_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '施主キー'
+    construction_company_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '施工キー'
+    client_company_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '管理会社キー'
+    structure_property_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '建物構造キー'
+    right_property_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '土地権利マスターキー'
+    earthquake_property_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '耐震マスターキー'
+    pet_property_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: 'ペットマスタキー'
+    code:
+      type: string
+      index: true
+      nullable: true
+      comment: '顧客コード'
+    property_name:
+      type: string
+      args: 30
+      nullable: true
+      comment: '顧客名'
+    prefecture_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '都道府県id'
+    address1:
+      type: string
+      index: true
+      nullable: true
+      comment: '市区町村'
+    address2:
+      type: string
+      index: true
+      nullable: true
+      comment: '番地'
+    parcel_number:
+      type: string
+      index: true
+      nullable: true
+      comment: '地番'
+    nearest_station:
+      type: string
+      index: true
+      nullable: true
+      comment: '最寄駅'
+    nearest_station_walk_time:
+      type: unsignedTinyInteger
+      index: true
+      nullable: true
+      comment: '最寄駅徒歩(分)'
+    bus_stop:
+      type: string
+      index: true
+      nullable: true
+      comment: 'バス停留所'
+    bus_stop_walk_time:
+      type: unsignedTinyInteger
+      index: true
+      nullable: true
+      comment: 'バス停留所徒歩(分)'
+#    nearest_station_2:
+#      type: string
+#      index: true
+#      nullable: true
+#      comment: '最寄駅'
+#    nearest_station_walk_time_2:
+#      type: unsignedTinyInteger
+#      index: true
+#      nullable: true
+#      comment: '最寄駅徒歩(分)'
+#    bus_stop_2:
+#      type: string
+#      index: true
+#      nullable: true
+#      comment: 'バス停留所'
+#    bus_stop_walk_time_2:
+#      type: unsignedTinyInteger
+#      index: true
+#      nullable: true
+#      comment: 'バス停留所徒歩(分)'
+#    nearest_station_3:
+#      type: string
+#      index: true
+#      nullable: true
+#      comment: '最寄駅'
+#    nearest_station_walk_time_3:
+#      type: unsignedTinyInteger
+#      index: true
+#      nullable: true
+#      comment: '最寄駅徒歩(分)'
+#    bus_stop_3:
+#      type: string
+#      index: true
+#      nullable: true
+#      comment: 'バス停留所'
+#    bus_stop_walk_time_3:
+#      type: unsignedTinyInteger
+#      index: true
+#      nullable: true
+#      comment: 'バス停留所徒歩(分)'
+    number_building:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '棟数'
+    number_unit:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '戸数(棟戸数)'
+    total_unit:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '総戸数'
+    number_floor:
+      type: unsignedTinyInteger
+      index: true
+      nullable: true
+      comment: '地上階数'
+    date_completion:
+      type: date
+      index: true
+      nullable: true
+      comment: '竣工年月日'
+    date_completion_japan:
+      type: string
+      index: true
+      nullable: true
+      comment: '竣工年月日(和暦)'
+    customer_list_flg:
+      type: boolean
+      index: true
+      nullable: true
+      comment: '顧客リストフラグ'
+    Pamphlet_flg:
+      type: boolean
+      index: true
+      nullable: true
+      comment: 'パンフレットフラグ'
+    liquidity_judgment:
+      type: string
+      args: 1
+      nullable: true
+      index: true
+      comment: '流通性判定'
+    property_judgment:
+      type: string
+      args: 1
+      nullable: true
+      index: true
+      comment: '物件判定'
+    approach_judgment:
+      type: string
+      args: 1
+      nullable: true
+      index: true
+      comment: 'アプローチ判定'
+    posting_flg:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '投函フラグ'
+    warning_flg:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '注意フラグ'
+    remark:
+      type: text
+      nullable: true
+      comment: '備考'
+    timestamps:

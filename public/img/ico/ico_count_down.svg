@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_13029" data-name="長方形 13029" width="20" height="20" rx="2" transform="translate(3438 6735)" fill="#7591a5"/>
+    </clipPath>
+  </defs>
+  <g id="ico_count_down" transform="translate(-3438 -6735)" clip-path="url(#clip-path)">
+    <path id="パス_681" data-name="パス 681" d="M6.474,8,8,0,0,1.526Z" transform="translate(3453.313 6743.485) rotate(135)" fill="#fff"/>
+  </g>
+</svg>

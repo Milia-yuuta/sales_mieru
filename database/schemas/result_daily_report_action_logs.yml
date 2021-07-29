@@ -1,0 +1,20 @@
+result_daily_report_action_logs:
+  columns:
+    id: bigIncrements
+    daily_report_id:
+      type: unsignedBigInteger
+      index: true
+      comment: '予定キー'
+    action_master_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'アクションマスタキー'
+    start_time:
+      type: time
+      index: true
+      comment: '開始時間'
+    end_time:
+      type: time
+      index: true
+      comment: '終了時間'
+    timestamps:

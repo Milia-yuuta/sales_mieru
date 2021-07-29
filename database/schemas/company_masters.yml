@@ -1,0 +1,7 @@
+company_masters:
+  columns:
+    id: bigIncrements
+    name:
+      type: string
+      index: true
+      comment: '企業名'

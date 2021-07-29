@@ -1,0 +1,29 @@
+action_masters:
+  columns:
+    id: bigIncrements
+    action_master_id:
+      type: unsignedBigInteger
+      nullable: true
+      index: true
+      comment: 'アクションマスターキー'
+    group_num:
+      type: unsignedBigInteger
+      nullable: true
+      index: true
+      comment: 'グループナンバー'
+    action_name:
+      type: string
+      args: 30
+      index: true
+      comment: 'アクション名'
+    val:
+      type: unsignedTinyInteger
+      index: true
+      nullable: true
+      comment: 'val_number'
+    seq:
+      type: unsignedTinyInteger
+      index: true
+      nullable: true
+      comment: '並び順'
+    timestamps:

@@ -1,0 +1,846 @@
+@charset "UTF-8";
+
+/* ! 独自パーツ =========================================
+  
+　■ 今日のストック
+　■ 表示項目 / 該当住戸
+　■ 見込リスト
+　 - 詳細
+　■ 日報
+　 - スケジュール登録
+　■ 分析
+
+ ========================================= */
+ 
+/* ! ====================================================================================================
+　■ 今日のストック
+==================================================================================================== */
+.list_count{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  > li{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    .head{
+      flex: 0 0 auto;
+      margin: 0 20px 0 0;
+    }
+    .cnt{
+      flex: auto;
+      min-width: 1px;
+    }
+  }
+}
+ 
+/* ! ====================================================================================================
+　■ 表示項目 / 該当住戸
+==================================================================================================== */
+.c-display{
+  position: relative;
+  z-index: 1;
+}
+.display_modal,
+.property_room_modal,
+.p-stock_detail{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  right: 0; bottom: -10px;
+  transform: translate(0,100%);
+  background: #fff;
+  padding: 15px;
+  box-shadow: 9px 10px 20px rgba(0,0,0,.15);
+  min-width: 200px;
+  border-radius: 6px;
+  &.open{
+    opacity: 1;
+    pointer-events: all;
+  }
+  .ttl{
+    font: 600 14px/1em 'Noto Sans JP',sans-serif;
+    margin: 0 0 6px;
+    color: #444;
+  }
+  .btnarea{
+    margin-left: -5px !important;
+    margin-top: 2px;
+    .btn{
+      flex: auto;
+      min-width: 1px;
+    }
+  }
+}
+// 該当住戸
+td.prospect_count{
+  position: relative;
+  z-index: 0;
+  .c-count{
+    cursor: pointer;
+  }
+}
+.property_room_modal,
+.p-stock_detail{
+  min-width: auto;
+  padding: 12px;
+  bottom: auto;
+  border: solid 1px #D3D3D3;
+  transform: translate(0, 0%);
+  width: 120px;
+}
+// 該当顧客
+.p-stock_detail{
+  width: 250px;
+  .head{
+    .ttl{
+      font: 500 14px/1.3em 'Noto Sans JP',sans-serif;
+      color: #444;
+      margin: 0 0 6px;
+    }
+  }
+  .list_room{
+    a{
+      display: flex;
+      align-items: center; justify-content: space-between;
+      width: 100%;
+      padding: 4px;
+      .ttl{
+        margin: 0;
+        font: 600 12px/1em 'Noto Sans JP',sans-serif;
+        color: #3B96DD;
+      }
+      .num{
+        font: 600 14px/1.3em 'Work Sans',sans-serif;
+        color: #3B96DD;
+      }
+      &:hover{
+        p{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.list_room{
+  max-height: 120px; 
+  overflow: auto;
+  width: 100%;
+  > li + li{
+    margin: 2px 0 0;
+  }
+  a{
+    font: 600 16px/1.3em 'Work Sans',sans-serif;
+    color: #3B96DD;
+    width: 90px; height: 26px;
+    border: solid 1px #3B96DD;
+    display: flex;
+    align-items: center; justify-content: center;
+    &:hover{
+      background: #3B96DD;
+      color: #fff;
+    }
+  }
+}
+
+/* ! ====================================================================================================
+　■ 見込リスト
+==================================================================================================== */
+// 追加フォーム ---------------------------
+.p-prospect_add,
+.p-prospect_action_add,
+.p-counter_add,
+.p-report_add{
+  position: fixed;
+  right: 50px; bottom: 30px;
+  padding: 10px 16px 16px;
+  background: #fff;
+  box-shadow: 2px 6px 20px rgba(0,0,0,.12);
+  border-radius: 6px;
+  max-width: 360px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease;
+  &.open{
+    opacity: 1;
+    pointer-events: all;
+    .panel_tab.show_tab{
+      pointer-events: all;
+    }
+  }
+  .head{
+    margin: 0 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .num{
+      font: 600 20px/1em 'Work Sans',sans-serif;
+      &:after{
+        content: attr(data-after);
+        font: 600 16px/1em 'Noto Sans JP',sans-serif;
+        margin: 0 0 0 4px;
+      }
+    }
+    .f{
+      margin-left: auto;
+      .unit{
+        font: 500 13px/1em 'Noto Sans JP',sans-serif;        
+      }
+      select{
+        font: 600 13px/1em 'Noto Sans JP',sans-serif;
+      }
+    }
+    .stage{
+      width: 100%;    
+      margin: 5px 0 0;  
+      &:before{
+        width: 100%; height: 30px;
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 10px;
+        font: 600 16px/1em 'Noto Sans JP',sans-serif;
+      }
+    }
+  }
+  .body{
+    max-height: 320px;
+    overflow: auto;
+    .area_tab{
+      margin: 0;
+    }
+  }
+  .ttl{
+    font: 600 14px/1em 'Noto Sans JP',sans-serif;
+    margin: 20px 0 10px;
+  }
+  textarea{
+    border-color: #707070;
+    border-radius: 4px;
+    background: #fff;
+    padding: 8px;
+    font: 300 14px/1.3em 'Noto Sans JP',sans-serif;
+    color: #444;
+  }
+  .foot{
+    margin: 20px 0 0;
+    .btn{
+      font: 600 16px/1em 'Noto Sans JP',sans-serif;
+    }
+  }
+}
+.list_prospect_add{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  > li{
+    width: 50%;
+    padding: 10px;
+    .ttl{
+      font: 600 14px/1em 'Noto Sans JP',sans-serif;
+      display: flex;
+      align-items: center;  
+      margin: 0 0 14px; 
+      &:after{
+        content: '';
+        flex: auto; min-width: 1px;
+        height: 1px;
+        margin: 0 0 0 15px;
+        background: #EEE;
+      }
+    }
+    label{
+      width: 100%;
+    }   
+  }
+}
+.p-prospect_add,
+.p-prospect_action_add{
+  .panel_tab.show_tab{
+    pointer-events: none;
+    padding: 12px;
+    .ttl{
+      margin: 0 0 20px;
+    }
+    [data-flex="align-center"]{
+      width: 100%;
+      margin: 0 0 10px;
+      .ttl{
+        margin: 0;
+      }
+      .f{
+        margin-left: auto;
+      }
+      .f_parts[data-option*="style-date"] input{
+        background: #fff;
+      }
+    }
+  }
+  &.open{
+    .panel_tab.show_tab{
+      pointer-events: all;
+    }
+  }
+}
+// 発掘カウンタ
+.p-counter_add{
+  width: 300px;
+  padding: 14px 16px;
+  form > .head{
+    flex-direction: column;
+    align-items: flex-start;
+    .ttl{
+      font: 600 16px/1.3em 'Noto Sans JP',sans-serif;
+      color: #444;
+      margin: 0 0 6px;
+    }
+  }
+  .ttl{
+    margin: 0;
+  }
+}
+.list_counter_add{
+  li{
+    > .ttl{
+      min-height: 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 4px 10px;
+      background: #009A44;
+      color: #fff;
+      margin: 0 0 12px;
+    }
+    &.company > .ttl{
+      background: #3B96DD;
+      margin: 12px 0;
+    }
+  }
+  .head{
+    min-height: 34px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  .f_parts{
+    justify-content: flex-end;
+    input{
+      width: 50px;
+      text-align: right;
+      padding: 0 10px 0 0;
+    }
+    .unit{
+      font: 600 12px/1em 'Noto Sans JP',sans-serif;
+      margin: 0 0 0 4px;
+      transform: translate(0px, 4px);
+    }
+  }
+  
+  .btnarea{
+    margin: -1px;
+    margin-left: 6px;
+    .btn{
+      margin: 1px;
+    }
+  }
+}
+// 詳細 ----------------------------------
+// タイトル
+.area_ttl{
+  .c-back{
+    margin: 0 14px 0 0;
+  }
+  .stage{
+    margin: 0 8px 0 0;
+  }
+}
+// 最終追客日からの日数
+.p-prospect_day{
+  display: flex;
+  align-items: baseline;
+  font: 600 26px/1em 'Work Sans',sans-serif;
+  color: #3B96DD;
+  margin: 0 10px 0 0;
+  &[data-ttl]:before,
+  &[data-after]:after{
+    content: attr(data-ttl);
+    font: 600 14px/1em 'Noto Sans JP',sans-serif;
+    margin: 0 8px 0 0;
+    color: #000;
+  }
+  &[data-after]:after{
+    content: attr(data-after);
+    margin: 0 0 0 4px;
+  }
+}
+
+.ui-datepicker{
+  transform: translate(-20px,10px);
+  z-index: 1000 !important;
+  .ui-widget-header{
+    background: #3c96dc;
+    color: #fff;
+  }
+  .ui-state-highlight{
+    border: 1px solid #aec0d2;
+    background: #c4d8ec;
+    color: #3c5b7b;
+  }
+}
+
+ 
+/* ! ====================================================================================================
+　■ 日報
+==================================================================================================== */
+// 日付
+.area_reportday{
+  margin: 0 0 0 30px;
+  display: flex;
+  align-items: center;
+  color: #5E6B76;
+  .day{
+    font: 500 24px/1em 'Work Sans',sans-serif;  
+  }
+  .date{
+    font: 500 18px/1em 'Work Sans',sans-serif;  
+    margin: 0 0 0 10px;
+  }
+}
+.tui-full-calendar-time-schedule-content{
+  font: 600 12px/1.3em 'Noto Sans JP',sans-serif;
+}
+// 見込顧客 ステータス
+.list_status_table{
+  padding: 10px 10px;
+  border: solid 1px #D3D3D3;
+  display: flex;
+  flex-wrap: wrap;
+  > li{
+    width: auto;
+    flex: 1 1 40%;
+    padding: 10px 20px;
+    .ttl{
+      font: 600 16px/1em 'Noto Sans JP',sans-serif;
+      color: #444;
+      display: flex;
+      align-items: center;
+      margin: 0 0 10px;
+      &:after{
+        content: '';
+        flex: auto;
+        min-width: 1px;
+        margin: 0 0 0 20px;
+        height: 1px;
+        background: #EEE;
+      }
+    }
+  }
+}
+.p-report_add{
+  left: auto; top: auto;
+  padding: 10px;
+  max-width: 230px; height: 242px;
+  position: absolute;
+  transition: all 0s ease;
+  .list_form{
+    > li{
+      &[data-option="style-column"]{
+        .head{
+          margin: 0 0 4px;
+        }
+      }
+    }
+    li + li{
+      margin: 8px 0 0;
+    }
+    .ttl{
+      margin: 0;
+    }
+  }
+  [data-option="style-select"]{
+    flex: auto;
+    min-width: 1px;
+    select{
+      padding-right: 20px;
+    }
+  }
+  .foot{
+    margin: 10px 0 0;
+  }
+}
+
+
+/* ! ====================================================================================================
+　■ 分析
+==================================================================================================== */
+/* ! 追客レポート ------------------------------------ */
+.p-scroll_pursuit{
+  position: relative;
+  min-height: 220px;
+  overflow: auto;
+  canvas{
+    height: 100% !important;
+  }
+}
+.c-pursuit_report{
+  .list_ticks,
+  .chart_line,
+  .list_chart_yield .body{
+    height: 150px;
+    background: none;
+    margin: 50px 0 0;
+  }
+  .foot{
+    .p-scroll_pursuit{
+      min-height: auto;
+      overflow: visible;
+      .list_chart_yield{
+        overflow: auto;
+      }
+    }
+    .l_auto{
+      position: relative;
+      z-index: 0;
+    }
+    .list_chart_yield{
+      .c-count{
+        background: #fff;
+        border-color: #000;
+        cursor: pointer;
+        &:hover{
+          opacity: .2;
+        }
+      }
+      .c-percent{
+        width: 8px;
+        height: 8px;
+        background: #7dc38f;
+        border: none;
+      }
+    }
+  }
+  &[data-option*="style-latent"]{
+    .chart_line div{
+      background: #f6efdb;
+    }
+  }
+  &[data-option*="style-overt"]{
+    .chart_line div{
+      background: #f1e5dd;
+    }
+  }
+}
+/* ! 歩留まり集計 ------------------------------------ */
+.p-chart_yield{
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: solid 1px #D3D3D3;
+  .head{
+    margin: 0 0 30px;
+    display: flex;
+    align-items: center;
+    .ttl{
+      font: 600 20px/1em 'Noto Sans JP',sans-serif;  
+    }
+    [data-flex]{
+      margin: -4px;
+      margin-left: auto;
+    }
+    p[data-label]{
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      font: 500 14px/1.3em 'Noto Sans JP',sans-serif;
+      &:before{
+        content: '';
+        width: 10px; height: 10px;
+        flex: 0 0 10px;
+        margin: 0 6px 0 0;
+        border: solid 1px #2175B7;
+        background: #3B96DD;        
+      }
+      &[data-label*="color-pink"]{
+        &:before{
+          border-color: #DB6EA5;
+          background: #FE9CCE;
+        }
+      }
+      &[data-label*="style-round"]{
+        &:before{
+          border-radius: 50%;
+        }
+        &[data-label*="color-pink"]:before{
+          background: #fff;
+        }
+      }
+    }
+  }
+  .body{
+    .l{
+      position: relative;
+      .l_fix{
+        position: relative;
+        z-index: 1;
+        background: #fff;    
+      }
+    }
+  }
+  .l_auto{
+    display: flex;
+    z-index: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
+.chart_line{
+  position: absolute;
+  z-index: -1;
+  left: 10px; top: 5px;
+  width: calc(100% - 20px); height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  div{
+    width: 100%; height: 1px;
+    background: #CFDCEA;
+  }
+}
+// グラフ
+.list_chart_yield{
+  display: flex;
+  margin: -5px;
+  padding: 5px;
+  position: relative;
+  &[data-ttl]{
+    &:before{
+      content: attr(data-ttl);
+      position: absolute;
+      left: 5px; bottom: 0;
+      width: 100%;
+      font: 600 14px/1.3em 'Noto Sans JP',sans-serif;
+      color: #5E6B76;
+      padding: 0 10px;
+    }
+  }
+  + .list_chart_yield{
+    li:first-of-type .foot{
+      position: relative;
+      &:before{
+        content: '';
+        width: 1px; height: 100%;
+        background: #E1E4E6;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  > li{
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 42px;
+  }
+  .body{
+    padding: 0 5px 0;
+    flex: auto;
+    min-height: 1px;
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+    flex: 0 0 auto;
+    position: relative;
+  }
+  .c-count{
+    flex: 0 0 50%;
+    width: 50%;
+    cursor: pointer;
+    transition: all .9s ease;
+    margin: 0 auto;
+    position: relative;
+    background: #3B96DD;
+    border: solid 1px #2175B7;
+    height: auto;
+    cursor: default;
+    &[data-num],
+    &[data-stage-up]{
+      &:before{
+        content: attr(data-num);
+        font: 500 14px/1em 'Work Sans',sans-serif;
+        position: absolute;
+        left: 50%; top: -6px;
+        transform: translate(-50%, -100%);
+        width: auto;
+        text-align: center;
+        min-width: 100%;
+        //z-index: 1;
+        background: rgba(47,134,202,.8);
+        padding: 2px 4px;
+        box-shadow: 0 2px 4px rgba(31,105,160,.14);
+        border-radius: 4px;
+        color: #fff;
+      }
+    }
+    &[data-stage-up]{
+      &:before{
+        content: attr(data-stage-up);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 4px rgba(62,62,62,.2);
+        color: #222;
+        border: solid 1px #222;
+        padding: 2px 3px;
+      }
+    }
+    &[data-stage-percent]{
+      &:after{
+        content: attr(data-stage-percent) '%';
+        font: 500 14px/1em 'Work Sans',sans-serif;
+        position: absolute;
+        left: 50%; top: -9px;
+        transform: translate(-50%, -200%);
+        width: auto;
+        text-align: center;
+        min-width: 100%;
+        z-index: 1;
+        padding: 2px 3px;
+        border-radius: 4px;
+        background: rgba(124, 194, 142, 0.9);
+        box-shadow: 0 2px 4px rgba(73,134,89,.18);
+        color: #fff;
+        border: solid 1px #76a081;
+      }
+    }
+    &.start{
+      height: 0 !important;
+    }
+    &[data-option*="color-pink"]{
+      background: #FE9CCE;
+      border-color: #DB6EA5;
+      &[data-num]{
+        &:before{
+          background: rgba(210,111,161,.85);
+          box-shadow: 0 2px 4px rgba(204,84,145,.2);
+        }
+      }
+      
+    }
+  }
+  .c-percent{
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: solid 2px #DB6EA5;
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translate(-50%,50%);
+    cursor: pointer;
+    z-index: 1;
+    .detail{
+      position: absolute;
+      right: 0; top: 0;
+      transform: translate(100%, -100%);
+      width: 90px;
+      height: 50px;
+      border-radius: 4px;
+      background: #000;
+      box-shadow: 0 6px 6px rgba(0,0,0,.2);
+      color: #fff;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .2s ease;
+      &.open{
+        pointer-events: all;
+        opacity: 1;
+      }
+      .ttl{
+        color: #fff;
+        font: 600 12px/1em 'Noto Sans JP',sans-serif;
+        display: flex;
+        align-items: center;
+        &:before{
+          content: '';
+          width: 10px; height: 10px;
+          flex: 0 0 10px;
+          border-radius: 50%; 
+          background: #fff;
+          border: solid 1px #DB6EA5;
+          margin: 0 4px 0 0;
+        }
+      }
+      .num{
+        text-align: right;
+        font: 500 18px/1em 'Work Sans',sans-serif;
+        margin: auto 0 0;
+        &[data-after]:after{
+          content: attr(data-after);
+          font: 600 10px/1.3em 'Work Sans',sans-serif;
+          margin: 0 0 0 4px;
+        }
+      }
+    }
+  }
+  .foot{
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex: auto;
+    min-height: 1px;
+    .ttl{
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      font: 600 13px/1.2em 'Noto Sans JP',sans-serif;
+      color: #5E6B76;
+      &:before{
+        display: none;
+      }
+    }
+  }
+}
+// chart_grid
+.list_ticks{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  > li{
+    p{
+      font: 600 14px/1em 'Noto Sans JP',sans-serif;
+      color: #444;
+      transform: translate(0px, -7px);
+      height: 1px;
+      display: flex;
+      align-items: baseline; justify-content: flex-end;
+      &:before{
+        display: none;
+      }
+      &[data-after]{
+        &:after{
+          content: attr(data-after);
+          font-size: 10px; 
+          font-weight: 800;
+        }
+      }
+      &:empty{
+        display: none;
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+  &[data-option*="position-right"]{
+    > li{
+      p{
+        justify-content: flex-start;
+        transform: translate(-2px, -7px);
+      }
+    }
+  }
+}
+
+
+

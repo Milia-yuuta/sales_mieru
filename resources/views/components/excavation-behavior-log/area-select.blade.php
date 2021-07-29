@@ -1,0 +1,1 @@
+{{Form::select('area_master_id', $areas, '',['required' => true, 'id' => 'excavation_area_id'])}}

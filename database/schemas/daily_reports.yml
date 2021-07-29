@@ -1,0 +1,22 @@
+daily_reports:
+  columns:
+    id: bigIncrements
+    user_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'ユーザーキー'
+    date:
+      type: timestamp
+      index: true
+      comment: '日報日付'
+    plan_check:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '0:予定未提出,1:予定提出済'
+    result_check:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '0:結果未提出,1:結果提出済'
+    timestamps:

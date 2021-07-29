@@ -1,0 +1,29 @@
+property_masters:
+    columns:
+        id: bigIncrements
+        property_master_id:
+            type: unsignedBigInteger
+            index: true
+            nullable: true
+            comment: '顧客マスターキー'
+        group_num:
+            type: unsignedTinyInteger
+            index: true
+            nullable: true
+            comment: 'グループナンバー'
+        name:
+            type: string
+            args: 30
+            index: true
+            comment: 'アクション名'
+        val:
+            type: unsignedTinyInteger
+            index: true
+            nullable: true
+            comment: 'val_number'
+        seq:
+            type: unsignedTinyInteger
+            index: true
+            nullable: true
+            comment: '並び順'
+        timestamps:

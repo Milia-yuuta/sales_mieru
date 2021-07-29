@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.stack{
+  + .stack{
+    margin-top: 10px;
+    &[data-option*="m-5"]{ margin-top: 5px; }
+    &[data-option*="m-15"]{ margin-top: 15px; }
+    &[data-option*="m-20"]{ margin-top: 20px; }
+    &[data-option*="m-30"]{ margin-top: 30px; }
+    &[data-option*="m-40"]{ margin-top: 40px; }
+  }
+}

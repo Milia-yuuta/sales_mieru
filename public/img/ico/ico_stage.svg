@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="29" viewBox="0 0 29 29">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_146" data-name="長方形 146" width="29" height="29" rx="14.5" transform="translate(-2057 2724)" fill="#3b96dd" opacity="0.3"/>
+    </clipPath>
+  </defs>
+  <g id="ico_stage" transform="translate(2057 -2724)" clip-path="url(#clip-path)">
+    <g id="グループ_4434" data-name="グループ 4434">
+      <g id="長方形_176" data-name="長方形 176" transform="translate(-2035.167 2732.5)" fill="#3b96dd" stroke="#3b96dd" stroke-width="1">
+        <rect width="3.333" height="13" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2.333" height="12" fill="none"/>
+      </g>
+      <g id="長方形_180" data-name="長方形 180" transform="translate(-2052.5 2733.833)" fill="#3b96dd" stroke="#3b96dd" stroke-width="1">
+        <rect width="3.333" height="11.667" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2.333" height="10.667" fill="none"/>
+      </g>
+      <g id="長方形_182" data-name="長方形 182" transform="translate(-2043.833 2732.5)" fill="#fff" stroke="#3b96dd" stroke-width="1">
+        <rect width="3.333" height="4.333" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2.333" height="3.333" fill="none"/>
+      </g>
+      <g id="長方形_183" data-name="長方形 183" transform="translate(-2039.5 2732.5)" fill="#fff" stroke="#3b96dd" stroke-width="1">
+        <rect width="3.333" height="2.333" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2.333" height="1.333" fill="none"/>
+      </g>
+      <g id="長方形_184" data-name="長方形 184" transform="translate(-2048.167 2732.5)" fill="#fff" stroke="#3b96dd" stroke-width="1">
+        <rect width="3.333" height="3.333" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2.333" height="2.333" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* ! 共通リスト =========================================
+	■ タブ
+	■ デフォルト
+ ========================================= */
+
+
+/* ! ■ タブ ———————————————————————————————————————————————————————————— */
+.c-tab{
+	.c-list_tab_button{
+		display: flex;
+    flex-wrap: wrap;
+	}
+}
+.c-list_tab_button{
+	li{
+	+li{
+		margin: 0 0 0 10px;
+	}	
+	}
+}
+.current_tab{
+	.button_tab{
+	color: #000;
+  background: #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
+  position: relative;
+  display: block;
+  font: 500 14px/1em 'Roboto', sans-serif;
+	}
+}
+	.button_tab{
+  color: #789B99;
+  padding: 10px 15px;
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
+  position: relative;
+  display: block;
+  background: #E4EFEE;
+  font: 500 14px/1em 'Roboto', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+

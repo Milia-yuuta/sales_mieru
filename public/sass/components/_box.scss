@@ -1,0 +1,171 @@
+@charset "UTF-8";
+/* ! 共通スタイル  =========================================
+
+　■ ボックス
+　■ 下層ページボックス
+
+ ========================================= */
+ 
+/* ! ====================================================================================================
+　■ ボックス
+==================================================================================================== */
+.box{
+  padding: 20px;
+  width: 100%;
+  &[data-box-option*="white"]{
+    background: #fff;
+  }
+  &[data-box-option*="shadow"]{
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  }
+  &[data-box-option*="space_lg"]{
+    padding: 30px;
+  }
+  &[data-box-option*="space_min"]{
+    padding: 0px;
+  }
+  .head_box {
+	  margin: 0 0 20px;
+	  &[data-headbox-option*="space_min"]{
+      margin: 0 0 10px;
+    	}
+  }
+}
+.body_box + .body_box{
+  margin: 20px 0 0; 
+}
+
+ /* ! ====================================================================================================
+　■ 下層ページボックス
+==================================================================================================== */
+.box[data-option*="style-page"]{
+  > .head_box{
+    display: flex;
+    margin: 0 0 20px;
+    .ttl{
+      font: 600 25px/1em 'Noto Sans JP',sans-serif;
+      color: #444;
+      display: flex;
+      align-items: center;
+      &:before{
+        content: '';
+        width: 30px; height: 30px;
+        background: url(../img/ico/ico_report.svg)no-repeat center;
+        background-size: contain !important;
+        display: block;
+        margin: 0 6px 0 0;
+      }
+      &[data-ico="prospects"]:before,
+      &[data-ico="mansions"]:before,{
+        background: url(../img/ico/ico_list.svg)no-repeat center;
+      }
+      &[data-ico="stock"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_stock.svg)no-repeat center;
+      }
+      &[data-ico="stage"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_stage.svg)no-repeat center;
+      }
+      &[data-ico="excavation"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_excavation.svg)no-repeat center;
+      }
+      &[data-ico="pursuit"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_pursuit.svg)no-repeat center;
+      }
+      &[data-ico="aggregate"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_aggregate.svg)no-repeat center;
+      }
+      &[data-ico="monthly"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_table.svg)no-repeat center;
+      }
+      &[data-ico="net"]:before,{
+        width: 50px; height: 50px;
+        background: url(../img/ico/ico_table.svg)no-repeat center;
+      }
+    }
+    .btnarea{
+      margin: -2px;
+      margin-left: auto;
+      > .btn{
+        margin: 2px;
+      }
+    }
+    .c-sort{
+      margin: 0 0 0 auto;
+    }
+  }
+  .foot_box{
+    margin: 20px 0 0;
+    &[data-option="margin-m"]{
+      margin: 40px 0 0;
+    }
+  }
+}
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #3b96dd;
+  background: -moz-linear-gradient(left, #3b96dd 10%, rgba(59,150,221, 0) 42%);
+  background: -webkit-linear-gradient(left, #3b96dd 10%, rgba(59,150,221, 0) 42%);
+  background: -o-linear-gradient(left, #3b96dd 10%, rgba(59,150,221, 0) 42%);
+  background: -ms-linear-gradient(left, #3b96dd 10%, rgba(59,150,221, 0) 42%);
+  background: linear-gradient(to right, #3b96dd 10%, rgba(59,150,221, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #3b96dd;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: #ffffff;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

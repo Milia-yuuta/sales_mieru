@@ -1,0 +1,54 @@
+caretakers:
+  columns:
+    id: bigIncrements
+    property_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '顧客キー'
+    caretaker_name:
+      type: string
+      args: 30
+      index: true
+      comment: '管理人名'
+    caretaler_method:
+      type: boolean
+      index: true
+      comment: 'NULL:常駐,1:日勤'
+    sunday_flg:
+      type: boolean
+      index: true
+      comment: '日曜フラグ'
+    monday_flg:
+      type: boolean
+      index: true
+      comment: '月曜フラグ'
+    tuesday_flg:
+      type: boolean
+      index: true
+      comment: '火曜フラグ'
+    wednesday_flg:
+      type: boolean
+      index: true
+      comment: '水曜フラグ'
+    thursday_flg:
+      type: boolean
+      index: true
+      comment: '木曜フラグ'
+    friday_flg:
+      type: boolean
+      index: true
+      comment: '金曜フラグ'
+    satursay_flg:
+      type: boolean
+      index: true
+      comment: '土曜フラグ'
+    work_ start_time:
+      type: time
+      nullable: true
+      comment: '勤務開始時間'
+    Work_end_time:
+      type: time
+      nullable: true
+      comment: '勤務終了時間'
+    timestamps:

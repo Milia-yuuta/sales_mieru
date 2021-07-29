@@ -1,0 +1,12 @@
+property_favorites:
+  columns:
+    id: bigIncrements
+    user_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'ユーザーキー'
+    property_id:
+      type: unsignedBigInteger
+      index: true
+      comment: '見込みリストキー'
+    timestamps:

@@ -1,0 +1,43 @@
+admins:
+  columns:
+    id: bigIncrements
+    sei:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '姓'
+    mei:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '名'
+    sei_kana:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '姓(カナ)'
+    mei_kana:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '名(カナ)'
+    birthday:
+      type: date
+      nullable: true
+      index: true
+      comment: '生年月日'
+    email:
+      type: string
+      unique: true
+      index: true
+      comment: 'email'
+    password:
+      type: string
+      comment: 'パスワード'
+    rememberToken:
+    timestamps:
+    softDeletes:

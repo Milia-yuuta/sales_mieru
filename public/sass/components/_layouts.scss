@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* ! CSS ----------------------------------------------------------------------------------------------------
+
+　■ ページレイアウト
+  ■ フレームワークレイアウト
+　■ 管理画面ページレイアウト
+---------------------------------------------------------------------------------------------------- */
+
+/* ! ====================================================================================================
+　■ フレームワークレイアウト
+==================================================================================================== */
+.l {
+  display: flex;
+}
+.l.wrap {
+  flex-wrap: wrap;
+}
+.l + .l {
+  margin-top: 5px;
+  &[data-space="10"]{
+    margin-top: 5px;
+  }
+  &[data-space="m-40"]{ margin-top: 40px; }
+  &[data-space="m-20"]{ margin-top: 20px; }
+  &[data-space="m-10"]{ margin-top: 10px; }
+  &[data-space="m-14"]{ margin-top: 14px; }
+}
+
+.l_fix_280{
+	max-width: 280px;
+}
+
+
+
+
+
+
+
+/* ! 固定と可変 —————————— */
+.l_auto {
+  flex: auto;
+  min-width: 1px;
+}
+.l_fix {
+  flex: 0 0 auto;
+}
+@for $num from 3 through 40 {
+  .l_fix[data-width="#{$num * 10}"] {
+    width: #{$num * 10}px;
+    flex: 0 0 #{$num * 10}px;
+  }
+}
+
+
+/* ! スペースを設ける —————————— */
+@for $num from 1 through 6 {
+  .l[data-space="#{$num * 10}"] {
+    margin: #{-$num * 10 / 2}px;
+  }
+  .l[data-space="#{$num * 10}"] > * { 
+    padding: #{$num * 10 / 2}px;
+  }
+}
+
+/* ! ラインを引く —————————— */
+.l_auto[data-option*="line-"]{
+  position: relative;  
+  &:before{
+    content: '';
+    background: #D3D3D3;
+    position: absolute;
+  }
+  &[data-option*="line-left"]{
+    padding-left: 15px;
+    margin-left: 15px;
+    &:before{
+      height: 100%; width: 1px;
+      left: 0; top: 0;
+    }
+  }
+}
+
+/* ! 12分割レイアウト —————————— */
+@for $num from 2 through 12 {
+  .l_#{$num} {
+    width: #{100% / 12 * $num};
+  }
+}
+$mqSize: "xl", "lg", "md", "sm";
+@each $size in $mqSize {
+  @include mq($size){
+    @for $num from 2 through 12 {
+      .l_#{$num}_xl {
+        width: #{100% / 12 * $num};
+      }
+    }
+  }
+}
+
+
+/* ! ====================================================================================================
+　■ 管理画面ページレイアウト
+==================================================================================================== */
+.l_sidebar {
+  width: 200px;
+  flex: 0 0 200px;
+  background: #fff;
+}
+.l_main {
+  flex: auto;
+  min-width: 10px;
+}
+@media screen and (max-width: 1280px){
+  .l_sidebar {
+    width: 160px;
+  }
+}
+

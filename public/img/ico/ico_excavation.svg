@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="29" viewBox="0 0 29 29">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_146" data-name="長方形 146" width="29" height="29" rx="14.5" transform="translate(-1823 2724)" fill="#3b96dd" opacity="0.3"/>
+    </clipPath>
+  </defs>
+  <g id="ico_excavation" transform="translate(1823 -2724)" clip-path="url(#clip-path)">
+    <g id="グループ_4433" data-name="グループ 4433">
+      <g id="パス_695" data-name="パス 695" transform="translate(-1818 2729)" fill="#e5eff7">
+        <path d="M 9.5 18.5 C 4.537380218505859 18.5 0.5 14.46261978149414 0.5 9.5 C 0.5 4.537380218505859 4.537380218505859 0.5 9.5 0.5 C 14.46261978149414 0.5 18.5 4.537380218505859 18.5 9.5 C 18.5 14.46261978149414 14.46261978149414 18.5 9.5 18.5 Z" stroke="none"/>
+        <path d="M 9.5 1 C 4.813079833984375 1 1 4.813079833984375 1 9.5 C 1 14.18692016601562 4.813079833984375 18 9.5 18 C 14.18692016601562 18 18 14.18692016601562 18 9.5 C 18 4.813079833984375 14.18692016601562 1 9.5 1 M 9.5 0 C 14.74670028686523 0 19 4.253299713134766 19 9.5 C 19 14.74670028686523 14.74670028686523 19 9.5 19 C 4.253299713134766 19 0 14.74670028686523 0 9.5 C 0 4.253299713134766 4.253299713134766 0 9.5 0 Z" stroke="none" fill="#3b96dd"/>
+      </g>
+      <g id="楕円形_6" data-name="楕円形 6" transform="translate(-1815.409 2731.591)" fill="#e5eff7" stroke="#3b96dd" stroke-width="0.5">
+        <circle cx="6.909" cy="6.909" r="6.909" stroke="none"/>
+        <circle cx="6.909" cy="6.909" r="6.659" fill="none"/>
+      </g>
+      <g id="楕円形_7" data-name="楕円形 7" transform="translate(-1812.818 2734.182)" fill="#fff" stroke="#3b96dd" stroke-width="1">
+        <circle cx="4.318" cy="4.318" r="4.318" stroke="none"/>
+        <circle cx="4.318" cy="4.318" r="3.818" fill="none"/>
+      </g>
+      <path id="パス_55" data-name="パス 55" d="M213,2430.372v-5.036" transform="translate(-2021.5 303.809)" fill="none" stroke="#3b96dd" stroke-width="0.5"/>
+      <path id="パス_56" data-name="パス 56" d="M219.786,2459.078l-2.312-4.476" transform="translate(-2024.042 287.612)" fill="none" stroke="#3b96dd" stroke-width="0.5"/>
+      <path id="パス_57" data-name="パス 57" d="M227.647,2451.726l2.146,1.051" transform="translate(-2029.822 289.247)" fill="none" stroke="#3b96dd" stroke-width="0.5"/>
+      <path id="パス_58" data-name="パス 58" d="M224.535,2456.19l1.907,1.676" transform="translate(-2028.054 286.71)" fill="none" stroke="#3b96dd" stroke-width="0.5"/>
+      <path id="パス_59" data-name="パス 59" d="M194.95,2450.578l-2.2.937" transform="translate(-2009.995 289.898)" fill="none" stroke="#3b96dd" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>

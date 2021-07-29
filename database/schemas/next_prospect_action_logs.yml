@@ -1,0 +1,127 @@
+next_prospect_action_logs:
+  columns:
+    id: bigIncrements
+    prospect_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'ユーザーキー'
+    prospect_action_log_id:
+      type: unsignedBigInteger
+      index: true
+      comment: '追客キー'
+    next_action_date:
+      type: date
+      index: true
+      nullable: true
+      comment: '次回のアクション日付'
+    TEL_home:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '見込みTEL在宅'
+    send_letter:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '手紙送付'
+    local_letter:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '現地手紙'
+    email:
+      type: boolean
+      nullable: true
+      index: true
+      comment: 'メール送信'
+    visit:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '戸別訪問'
+    pursuit_other:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '追客その他'
+    assessment_report_email:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '査定書メール'
+    send_assessment_report:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '査定書送付'
+    web_negotiation:
+      type: boolean
+      nullable: true
+      index: true
+      comment: 'web商談'
+    assessment_negotiation:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '査定・商談'
+    re-negotiation:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '再商談'
+    visit_caretaker:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '管理人訪問'
+    TEL_caretaker:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '管理人TEL'
+    on-site_check:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '現地チェック'
+    research_other:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '調査その他'
+    re_TEL:
+      type: boolean
+      nullable: true
+      index: true
+      comment: 'TEL'
+    re_email:
+      type: boolean
+      nullable: true
+      index: true
+      comment: 'メール'
+    re_letter:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '手紙・FAX'
+    re_hp:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '当社HP反響'
+    re_site:
+      type: boolean
+      nullable: true
+      index: true
+      comment: '一括査定サイト反響'
+    re_other:
+      type: boolean
+      nullable: true
+      index: true
+      comment: 'お客様反応その他'
+    result:
+      type: text
+      nullable: true
+      comment: '次回追客行動結果'
+    timestamps:
+    softDeletes:
