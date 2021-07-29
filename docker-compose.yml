@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./docker/web/nginx
+      dockerfile: ./Dockerfile
+    ports:
+      - 8090:80
+    volumes:
+      #      ローカル環境での開発用設定ファイル
+      - ./docker/web/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      #      本番環境でHTTPS化する際の設定ファイル
+      #      - ./docker/web/nginx/conf.d/ssl.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/web/nginx/volumes/log:/var/log/nginx
+      - ./public:/var/www/html/public
+    links:
+      - app
+    networks:
+      - common_link
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/php-fpm/Dockerfile
+    volumes:
+      - ./:/var/www/html:cached
+    links:
+      - db
+      - smtp
+    networks:
+      - common_link
+  db:
+    build:
+      context: ./docker/db/mysql
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./docker/db/mysql/volumes/data:/var/lib/mysql
+      - ./docker/db/mysql/volumes/log:/var/log
+    ports:
+      - 33090:3306
+    networks:
+      - common_link
+  smtp:
+    build: ./docker/smtp/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - common_link
+networks:
+  common_link:
+    external: true

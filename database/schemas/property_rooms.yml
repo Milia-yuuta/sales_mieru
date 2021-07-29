@@ -1,0 +1,28 @@
+property_rooms:
+    columns:
+        id: bigIncrements
+        property_id:
+            type: unsignedBigInteger
+            index: true
+            nullable: true
+            comment: '顧客キー'
+        prospect_id:
+            type: unsignedBigInteger
+            index: true
+            nullable: true
+            comment: '見込みリストキー'
+        client_id:
+            type: unsignedBigInteger
+            index: true
+            nullable: true
+            comment: '見込顧客キー'
+        occupied_area:
+            type: unsignedBigInteger
+            nullable: true
+            comment: '専有面積'
+        room_name:
+            type: string
+            args: 30
+            comment: '担当者'
+        timestamps:
+        softDeletes:

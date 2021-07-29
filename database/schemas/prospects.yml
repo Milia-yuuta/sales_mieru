@@ -1,0 +1,48 @@
+prospects:
+  columns:
+    id: bigIncrements
+    user_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'ユーザーキー'
+    office_master_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'hat所キー'
+    area_master_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'エリアキー'
+    input_person:
+      type: unsignedBigInteger
+      index: true
+      comment: '1:営業,2:hat'
+    date:
+      type: timestamp
+      index: true
+      comment: '発生日'
+    latest_date:
+      type: timestamp
+      index: true
+      nullable: true
+      comment: 'リレーション先の更新日'
+    usage_action_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '利用形態マスターキー'
+    generating_medium_master_id:
+      type: unsignedBigInteger
+      index: true
+      comment: '発生媒体キー'
+    source_media_site_master_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '発生媒体サイトキー'
+    remark:
+      type: text
+      nullable: true
+      comment: '備考'
+    timestamps:
+    softDeletes:

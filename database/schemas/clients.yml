@@ -1,0 +1,110 @@
+clients:
+  columns:
+    id: bigIncrements
+    type:
+      type: string
+      args: 1
+      nullable: true
+      index: true
+      comment: '顧客区分(1：個人、2：法人)'
+    name:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '顧客名'
+    zip_code:
+      type: string
+      args: 8
+      index: true
+      nullable: true
+      comment: '郵便番号'
+    address1:
+      type: string
+      index: true
+      nullable: true
+      comment: '住所'
+    address2:
+      type: string
+      index: true
+      nullable: true
+      comment: '番地'
+    address3:
+      type: string
+      args: 80
+      index: true
+      nullable: true
+      comment: '建物名'
+    address4:
+      type: string
+      args: 10
+      index: true
+      nullable: true
+      comment: '担当者'
+    email:
+      type: string
+      index: true
+      nullable: true
+      comment: 'email(PC)'
+    s_mobile_email:
+      type: string
+      index: true
+      nullable: true
+      comment: 'email(スマホ)'
+    mobile_email:
+      type: string
+      index: true
+      nullable: true
+      comment: 'email(携帯)'
+    tel:
+      type: string
+      index: true
+      nullable: true
+      comment: '電話番号'
+    mobile:
+      type: string
+      index: true
+      nullable: true
+      comment: '携帯番号'
+    fax:
+      type: string
+      index: true
+      nullable: true
+      comment: 'fax'
+    address_check:
+      type: string
+      args: 1
+      index: true
+      nullable: true
+      comment: '住所連絡可否'
+    tel_check:
+      type: string
+      args: 1
+      index: true
+      nullable: true
+      comment: '電話連絡可否'
+    mobile_check:
+      type: string
+      args: 1
+      index: true
+      nullable: true
+      comment: '携帯番号連絡可否'
+    email_check:
+      type: string
+      args: 1
+      index: true
+      nullable: true
+      comment: 'メール連絡可否'
+    s_mobile_email_check:
+      type: string
+      args: 1
+      index: true
+      nullable: true
+      comment: 'スマホメール連絡可否'
+    mobile_email_check:
+      type: string
+      args: 1
+      index: true
+      nullable: true
+      comment: '携帯メール連絡可否'
+    timestamps:

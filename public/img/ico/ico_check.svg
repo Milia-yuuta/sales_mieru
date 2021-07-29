@@ -1,0 +1,10 @@
+<svg id="コンポーネント_8_1" data-name="コンポーネント 8 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_12999" data-name="長方形 12999" width="20" height="20" rx="4" fill="#3b96dd"/>
+    </clipPath>
+  </defs>
+  <g id="マスクグループ_8" data-name="マスクグループ 8" clip-path="url(#clip-path)">
+    <path id="合体_5" data-name="合体 5" d="M6.107,14.279v0H0V10.385H6.107V0H10V14.279Z" transform="translate(11.583 0.001) rotate(45)" fill="#3b96dd"/>
+  </g>
+</svg>

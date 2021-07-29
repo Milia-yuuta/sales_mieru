@@ -1,0 +1,96 @@
+users:
+  columns:
+    id: bigIncrements
+    area_master_id:
+      type: unsignedInteger
+      nullable: true
+      index: true
+      comment: 'エリアマスターキー'
+    office_master_id:
+      type: unsignedInteger
+      nullable: true
+      index: true
+      comment: 'オフィスマスターキー'
+    status_id:
+      type: unsignedInteger
+      nullable: true
+      index: true
+      comment: 'ユーザーマスターキー(職位)'
+    gender_id:
+      type: unsignedInteger
+      nullable: true
+      index: true
+      comment: 'ユーザーマスターキー(性別)'
+    employee_code:
+      type: string
+      nullable: true
+      comment: '社員番号'
+    sei:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '姓'
+    mei:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '名'
+    sei_kana:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '姓(カナ)'
+    mei_kana:
+      type: string
+      args: 30
+      nullable: true
+      index: true
+      comment: '名(カナ)'
+    birthday:
+      type: date
+      nullable: true
+      index: true
+      comment: '生年月日'
+    email:
+      type: string
+      unique: true
+      index: true
+      comment: 'email'
+    tel:
+      type: string
+      index: true
+      nullable: true
+      comment: '電話番号'
+    password: string
+    rememberToken:
+    zip_code:
+      type: string
+      args: 7
+      index: true
+      nullable: true
+      comment: '郵便番号'
+    prefecture:
+      type: string
+      index: true
+      nullable: true
+      comment: '都道府県'
+    address1:
+      type: string
+      index: true
+      nullable: true
+      comment: '市区町村'
+    address2:
+      type: string
+      nullable: true
+      index: true
+      comment: '番地'
+    address3:
+      type: string
+      index: true
+      nullable: true
+      comment: '建物名'
+    timestamps:
+    softDeletes:

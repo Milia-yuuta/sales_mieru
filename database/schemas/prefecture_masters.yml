@@ -1,0 +1,9 @@
+prefecture_masters:
+  columns:
+    id: bigIncrements
+    name:
+      type: string
+      args: 10
+      index: true
+      comment: '都道府県名'
+    timestamps:

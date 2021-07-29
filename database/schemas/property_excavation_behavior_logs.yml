@@ -1,0 +1,32 @@
+property_excavation_behavior_logs:
+  columns:
+    id: bigIncrements
+    user_id:
+      type: unsignedBigInteger
+      index: true
+      comment: 'ユーザーキー'
+    property_id:
+      type: unsignedBigInteger
+      index: true
+      nullable: true
+      comment: '顧客キー'
+    action_date:
+      type: date
+      index: true
+      comment: '行動日'
+    manager_visit_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '管理人訪問'
+    check_building_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '一棟チェック'
+    manager_TEL_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '管理人TEL'
+    timestamps:

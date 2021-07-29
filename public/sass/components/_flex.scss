@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+[data-flex]{ 
+  display: inline-flex;
+//   vertical-align: middle;
+}
+[data-flex*="flex"]{ display: flex; }
+[data-flex*="wrap"]{ flex-wrap: wrap; }
+[data-flex*="align-center"]{ align-items: center; }
+[data-flex*="align-end"]{ align-items: flex-end; }
+
+[data-flex*="justify-center"]{ display: flex; justify-content: center; }
+[data-flex*="justify-end"]{ justify-content: flex-end; }

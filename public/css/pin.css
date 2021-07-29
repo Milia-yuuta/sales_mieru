@@ -1,0 +1,15 @@
+.tbd {
+    width: 18px;
+    height: 18px;
+    background: url(../img/ico/ico_pin.svg);
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    display: block;
+    margin: auto; }
+
+[data-option*="style-pin"] .tbd {
+    background: url(../img/ico/ico_pin_current.svg); }
+.display_none{
+    display: none !important;
+}

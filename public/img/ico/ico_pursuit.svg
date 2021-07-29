@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="29" viewBox="0 0 29 29">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_14264" data-name="長方形 14264" width="29" height="29" rx="14.5" transform="translate(-1588 2724)" fill="#3b96dd" opacity="0.3"/>
+    </clipPath>
+  </defs>
+  <g id="ico_pursuit" transform="translate(1588 -2724)" clip-path="url(#clip-path)">
+    <g id="グループ_4431" data-name="グループ 4431" transform="translate(-1674.7 2088)" opacity="0.9">
+      <g id="長方形_185" data-name="長方形 185" transform="translate(101.461 651.154)" fill="#e5eff7" stroke="#327eba" stroke-width="1">
+        <rect width="4.359" height="7.846" stroke="none"/>
+        <rect x="0.5" y="0.5" width="3.359" height="6.846" fill="none"/>
+      </g>
+      <g id="長方形_186" data-name="長方形 186" transform="translate(96.231 652.897)" fill="#e5eff7" stroke="#327eba" stroke-width="1">
+        <rect width="4.359" height="6.103" stroke="none"/>
+        <rect x="0.5" y="0.5" width="3.359" height="5.103" fill="none"/>
+      </g>
+      <g id="長方形_187" data-name="長方形 187" transform="translate(91 647.667)" fill="#e5eff7" stroke="#327eba" stroke-width="1">
+        <rect width="4.359" height="11.333" stroke="none"/>
+        <rect x="0.5" y="0.5" width="3.359" height="10.333" fill="none"/>
+      </g>
+      <g id="長方形_188" data-name="長方形 188" transform="translate(107.128 642)" fill="#e5eff7" stroke="#327eba" stroke-width="1">
+        <rect width="4.359" height="17" stroke="none"/>
+        <rect x="0.5" y="0.5" width="3.359" height="16" fill="none"/>
+      </g>
+      <g id="長方形_189" data-name="長方形 189" transform="translate(101.461 649.846)" fill="#327eba" stroke="#327eba" stroke-width="1">
+        <rect width="4.359" height="3.051" stroke="none"/>
+        <rect x="0.5" y="0.5" width="3.359" height="2.051" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

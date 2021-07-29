@@ -1,0 +1,25 @@
+teams:
+  columns:
+    id: bigIncrements
+    sales_id:
+      type: unsignedBigInteger
+      nullable: true
+      index: true
+      comment: '営業ユーザーキー'
+    hat_id:
+      type: unsignedBigInteger
+      nullable: true
+      index: true
+      comment: 'hatユーザーキー'
+    office_master_id:
+      type: unsignedInteger
+      nullable: true
+      index: true
+      comment: 'オフィスマスターキー'
+    area_master_id:
+      type: unsignedInteger
+      nullable: true
+      index: true
+      comment: 'エリアマスターキー'
+    timestamps:
+    softDeletes:

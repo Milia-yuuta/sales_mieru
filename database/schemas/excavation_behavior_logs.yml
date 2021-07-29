@@ -1,0 +1,149 @@
+excavation_behavior_logs:
+  columns:
+    id: bigIncrements
+    user_id:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'ユーザーキー'
+    office_master_id:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '事業所キー'
+    area_master_id:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'エリアキー'
+    status_id:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '1:sale,2:hat'
+    action_date:
+      type: date
+      index: true
+      comment: '行動日'
+    manager_visit_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '管理人訪問'
+    personal_visit_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '個人訪問'
+    check_post_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'ポストチェック'
+    check_building_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '一棟チェック'
+    patrol_local_information:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '巡回現地情報'
+    DM_distribution_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'DM手まき'
+    flyer_distribution_count:
+      type: unsignedBigInteger
+      index: true
+      comment: '売却チラシ手まき'
+    letter_distribution_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '手紙・封書手まき'
+    random_visit_implementation_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'ランダム戸別訪問/実施数'
+    random_visit_at_home_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'ランダム戸別訪問/在宅数'
+    manager_TEL_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '管理人TEL'
+    personal_TEL_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '個人TEL'
+    random_TEL_implementation_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'ランダムTEL実施'
+    random_TEL_at_home_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'ランダムTEL在宅'
+    mail_letter_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '手紙・封書郵送'
+    flyer_delivery_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: '売却チラシ宅配依頼'
+    DM_mail_count:
+      type: unsignedBigInteger
+      index: true
+      default: 0
+      comment: 'DM郵送'
+    return_to_mail:
+      type: unsignedBigInteger
+      nullable: true
+      index: true
+      default: 0
+      comment: '郵送物戻'
+    rental_information:
+      type: unsignedBigInteger
+      nullable: true
+      default: 0
+      comment: '賃貸情報'
+    registration_information:
+      type: unsignedBigInteger
+      nullable: true
+      default: 0
+      comment: '登記情報'
+    building_confirmation_information:
+      type: unsignedBigInteger
+      nullable: true
+      default: 0
+      comment: '建築確認情報'
+    pre_visit_preliminary_count:
+      type: unsignedBigInteger
+      nullable: true
+      default: 0
+      comment: '前取訪問 実施'
+    pre_visit_home_count:
+      type: unsignedBigInteger
+      nullable: true
+      default: 0
+      index: true
+      comment: '前取訪問 在宅'
+    pre_TEL_home_count:
+      type: unsignedBigInteger
+      nullable: true
+      default: 0
+      comment: '前取TEL 在宅'
+    timestamps:
