@@ -11,6 +11,7 @@
     <meta property="og:url" content="@yield('url')">
     <meta property="og:image" content="@yield('image')">
     <meta property="og:type" content="website">
+    <meta name="robots" content="noindex">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700i,900i&display=swap" type="text/css">
